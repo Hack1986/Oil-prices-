@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080d16"><meta name="description" content="OILPULSE — ติดตามราคาน้ำมันไทย">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg">
-<link rel="stylesheet" href="styles.css"><title>OILPULSE — Fuel Intelligence</title>
+<link rel="stylesheet" href="styles.css"><title>OILPULSE — Official Fuel Prices</title>
 </head>
 <body>
 <div class="shell">
@@ -19,15 +19,16 @@
  <div class="hero-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="core"><div class="drop">◆</div><b>OIL</b><small>MONITOR</small></div><div class="art-label">ENERGY<br><strong>TRACKER</strong></div></div>
 </section>
 <section class="market-strip"><div><small>MARKET STATUS</small><b><span class="status-dot"></span> ติดตามราคาน้ำมัน</b></div><div><small>DISPLAY UNIT</small><b>บาท / ลิตร</b></div><div><small>REGION</small><b>กรุงเทพฯ / อ้างอิง</b></div></section>
-<section class="section-head"><div><div class="eyebrow">LIVE PRICE BOARD</div><h2>ราคาขายปลีก <span>เชื้อเพลิง</span></h2></div><div class="segmented"><button class="active">ทั้งหมด</button><button id="upBtn">ปรับขึ้น</button><button id="downBtn">ปรับลง</button></div></section>
+<section class="section-head"><div><div class="eyebrow">LIVE PRICE BOARD</div><h2>ราคาขายปลีก <span>เชื้อเพลิง</span></h2></div><div class="segmented" id="brandFilter"></div></section>
 <section id="fuelGrid" class="fuel-grid"></section>
 <section class="two-col">
  <article class="panel chart-panel"><div class="panel-head"><div><div class="eyebrow">PRICE MOVEMENT</div><h3>แนวโน้มราคา</h3></div><select id="chartRange"><option>7 วัน</option><option>30 วัน</option><option>6 เดือน</option></select></div><div class="chart-wrap"><canvas id="chart" height="180"></canvas></div><div class="chart-foot"><span>กราฟตัวอย่างเพื่อแสดงรูปแบบ</span><b>THB / L</b></div></article>
  <article class="panel alert-panel"><div class="panel-head"><div><div class="eyebrow">PRICE WATCH</div><h3>ตั้งค่าแจ้งเตือน</h3></div><span class="bell">♧</span></div><p>เลือกชนิดน้ำมันที่ต้องการติดตาม ระบบจะแจ้งเมื่อพบการเปลี่ยนแปลงจากแหล่งข้อมูลที่เชื่อมต่อ</p><div id="watchList" class="watch-list"></div><button class="primary-btn" id="saveWatch">บันทึกการติดตาม <span>→</span></button><small class="hint">การแจ้งเตือนล่วงหน้าทำได้เมื่อมีประกาศยืนยันและมีเวลาเริ่มใช้ราคา</small></article>
 </section>
-<section class="panel announcement"><div class="announce-icon">!</div><div><div class="eyebrow">IMPORTANT</div><h3>ประกาศปรับราคา</h3><p id="announcementText">ยังไม่มีประกาศปรับราคาที่เชื่อมต่อในโหมดทดลอง</p></div><span class="tag">AWAITING FEED</span></section>
+<section class="panel announcement"><div class="announce-icon">!</div><div><div class="eyebrow">IMPORTANT</div><h3>ประกาศปรับราคา</h3><p id="announcementText">รอข้อมูลประกาศจากแหล่งทางการ</p></div><span class="tag">VERIFIED FEED ONLY</span></section>
+<section class="panel" style="margin-top:15px"><div class="eyebrow">OFFICIAL SOURCES</div><h3>แหล่งข้อมูลที่ใช้อ้างอิง</h3><p id="sourceList" style="font-size:12px;color:#9cabc0;line-height:2">กำลังโหลดรายการแหล่งข้อมูล</p><p style="font-size:11px;color:#8292a8">ราคาอาจต่างตามพื้นที่และภาษีท้องถิ่น โปรดตรวจสอบกับสถานีบริการก่อนเติม</p></section>
 </main>
-<footer><div class="brand mini"><img src="assets/icon.svg" alt=""><span>OIL<span>PULSE</span><small>FUEL INTELLIGENCE</small></span></div><p>ข้อมูลตัวอย่างเพื่อทดสอบหน้าตาแอป · โปรดตรวจสอบราคาจริงกับผู้ให้บริการก่อนเติมน้ำมัน</p><p>แหล่งข้อมูลอ้างอิง: <a href="https://data.eppo.go.th/" target="_blank" rel="noopener">สำนักงานนโยบายและแผนพลังงาน (EPPO)</a></p></footer>
+<footer><div class="brand mini"><img src="assets/icon.svg" alt=""><span>OIL<span>PULSE</span><small>FUEL INTELLIGENCE</small></span></div><p>แสดงเฉพาะข้อมูลที่ดึงและตรวจสอบได้จากแหล่งทางการ · หากไม่พบข้อมูลจะแสดงเป็นไม่มีข้อมูล</p><p>แหล่งข้อมูลอ้างอิง: <a href="https://data.eppo.go.th/" target="_blank" rel="noopener">สำนักงานนโยบายและแผนพลังงาน (EPPO)</a></p></footer>
 </div>
 <div class="toast" id="toast"></div>
 <script src="app.js"></script>

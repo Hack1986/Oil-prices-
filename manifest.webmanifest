@@ -1,0 +1,17 @@
+{
+  "name": "OILPULSE Fuel Intelligence",
+  "short_name": "OILPULSE",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080d16",
+  "theme_color": "#080d16",
+  "lang": "th",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
